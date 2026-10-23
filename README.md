@@ -1,20 +1,25 @@
-![Intro](./assets/hero.svg?v=1)
+<div align="center">
 
-![About](./assets/about-life.svg?v=1)
+<img src="./assets/hero.svg?v=3" width="100%" alt="Intro Banner" />
 
-![Stack](./assets/stack.svg?v=1)
+<img src="./assets/about-life.svg?v=3" width="100%" alt="About Me" />
 
-![ID](./assets/id-dashboard.svg?v=1)
+<img src="./assets/stack.svg?v=3" width="100%" alt="Tech Stack" />
 
-![Connect](./assets/connect.svg?v=1)
+<img src="./assets/id-dashboard.svg?v=3" width="100%" alt="Profile ID" />
 
-## Projects
+<img src="./assets/connect.svg?v=3" width="100%" alt="Connect" />
 
-| Project | Description |
-|---|---|
-| [SevSetu](https://github.com/anshusharma/sevsetu) | Indigenous language chatbot built for local accessibility |
-| [TruthGuard](https://github.com/anshusharma/truthguard) | Real-time deepfake detection platform using advanced ML models |
+</div>
 
-## Connect
+## 🚀 Projects
 
-[LinkedIn](https://linkedin.com/in/anshu-sharma) · [YouTube](https://youtube.com/@anshu-sharma) · [Topmate](https://topmate.io/anshu_sharma)
+| Project | Description | Link |
+| :--- | :--- | :--- |
+| **SevSetu** | Indigenous language chatbot built for local accessibility | [View Repo](https://github.com/anshusharma/sevsetu) |
+| **TruthGuard** | Real-time deepfake detection platform using advanced ML | [View Repo](https://github.com/anshusharma/truthguard) |
+
+## 🌐 Connect With Me
+* [LinkedIn](https://linkedin.com/in/anshu-sharma)
+* [YouTube](https://youtube.com/@anshu-sharma)
+* [Topmate](https://topmate.io/anshu_sharma)

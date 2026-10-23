@@ -1,24 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="About me">
-  <rect width="900" height="300" rx="22" fill="#070b16" />
-  <rect x="1" y="1" width="898" height="298" rx="21" fill="none" stroke="#247bff" stroke-opacity=".6" stroke-width="2" />
-  
-  <text x="44" y="66" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="28" font-weight="800" fill="#f4f6ff">What I do</text>
-  
-  <rect x="44" y="90" width="350" height="38" rx="10" fill="#0f1830" stroke="#243049" />
-  <circle cx="64" cy="109" r="5" fill="#247bff" />
-  <text x="82" y="115" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#dfe6f5">Full-Stack Developer</text>
-  
-  <rect x="44" y="138" width="350" height="38" rx="10" fill="#0f1830" stroke="#243049" />
-  <circle cx="64" cy="157" r="5" fill="#ff354f" />
-  <text x="82" y="163" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#dfe6f5">Tech Lead (GDG on Campus)</text>
-  
-  <rect x="44" y="186" width="350" height="38" rx="10" fill="#0f1830" stroke="#243049" />
-  <circle cx="64" cy="205" r="5" fill="#247bff" />
-  <text x="82" y="211" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#dfe6f5">AI & RAG System Builder</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="100%" height="100%">
+  <defs>
+    <style>
+      600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+      .bg { fill: #090d16; rx: 16px; }
+      .border { fill: none; stroke: rgba(255, 255, 255, 0.08); stroke-width: 1px; }
+      .card-bg { fill: #111827; stroke: rgba(255, 255, 255, 0.05); stroke-width: 1px; rx: 12px; }
+      
+      .title { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; fill: #ffffff; }
+      .mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #10b981; }
+      .desc { font-family: 'Inter', sans-serif; font-size: 13px; fill: #94a3b8; line-height: 1.5; }
+    </style>
+  </defs>
 
-  <!-- Right Panel -->
-  <rect x="430" y="36" width="440" height="228" rx="18" fill="#0f1830" stroke="#243049" stroke-width="1.5" />
-  <text x="466" y="76" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="600" fill="#7e8cab">Off the keyboard</text>
-  <text x="466" y="130" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="34" font-weight="800" fill="#f4f6ff">Community Mentorship</text>
-  <text x="466" y="170" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="18" font-weight="500" fill="#247bff">Building tech communities & hosting hackathons</text>
+  <rect width="900" height="220" class="bg" />
+  <rect width="898" height="218" x="1" y="1" class="border" rx="15" />
+
+  <!-- Section Header -->
+  <text x="40" y="42" class="mono">// 01. CORE PHILOSOPHY & INTERESTS</text>
+
+  <!-- Card 1: Engineering -->
+  <g transform="translate(40, 65)">
+    <rect width="250" height="120" class="card-bg" />
+    <text x="20" y="35" class="title">🚀 Engineering</text>
+    <text x="20" y="65" class="desc">High-throughput microservices,</text>
+    <text x="20" y="85" class="desc">distributed databases & LLMs.</text>
+  </g>
+
+  <!-- Card 2: Open Source -->
+  <g transform="translate(325, 65)">
+    <rect width="250" height="120" class="card-bg" />
+    <text x="20" y="35" class="title">🌐 Open Source</text>
+    <text x="20" y="65" class="desc">Active contributor to developer</text>
+    <text x="20" y="85" class="desc">tools & Rust ecosystem.</text>
+  </g>
+
+  <!-- Card 3: Beyond Code -->
+  <g transform="translate(610, 65)">
+    <rect width="250" height="120" class="card-bg" />
+    <text x="20" y="35" class="title">☕ Life & Focus</text>
+    <text x="20" y="65" class="desc">Specialty coffee enthusiast,</text>
+    <text x="20" y="85" class="desc">cyberpunk sci-fi & synthwave.</text>
+  </g>
 </svg>

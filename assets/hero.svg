@@ -1,4 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360" role="img" aria-label="Intro banner">
+  <rect width="900" height="360" rx="22" fill="#070b16" />
+  <rect x="1" y="1" width="898" height="358" rx="21" fill="none" stroke="#247bff" stroke-opacity=".6" stroke-width="2" />
+  
+  <!-- Accent Glow Circle -->
+  <circle cx="780" cy="120" r="80" fill="#247bff" opacity="0.15" />
+  <circle cx="720" cy="240" r="100" fill="#ff354f" opacity="0.1" />
 
+  <!-- Text Section -->
+  <text x="50" y="85" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="22" font-weight="500" fill="#9fb0d0">Hi there, I’m</text>
+  <text x="50" y="155" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="52" font-weight="800" fill="#f4f6ff" letter-spacing="-1">Anshu Sharma</text>
+  
+  <text x="50" y="210" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="24" font-weight="700" fill="#247bff">Full-Stack Developer & Tech Lead</text>
+  
+  <text x="50" y="250" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#aab4cc">I build scalable full-stack web apps and intelligent AI agents.</text>
+  
+  <!-- Footer Metadata line -->
+  <circle cx="54" cy="305" r="4" fill="#ff354f" />
+  <text x="68" y="310" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="500" fill="#7e8cab">Ramgarh  /  Computer Science & Engineering Student</text>
+  
+  <!-- Character Illustration Placeholder Box -->
+  <rect x="680" y="70" width="160" height="200" rx="16" fill="#111827" stroke="#243049" stroke-width="2" />
+  <circle cx="760" cy="140" r="35" fill="#1b2a4d" />
+  <path d="M 720 215 Q 760 180 800 215" fill="#1b2a4d" />
+</svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360" role="img" aria-label="Intro banner"><defs><pattern id="hd" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1" fill="#18223d" /></pattern><linearGradient id="hg" x1="0" x2="1"><stop offset="0" stop-color="#247bff" /><stop offset="1" stop-color="#ff354f" /></linearGradient></defs><rect width="900" height="360" rx="22" fill="#070b16" /><rect width="900" height="360" rx="22" fill="url(#hd)" /><rect x="1" y="1" width="898" height="358" rx="21" fill="none" stroke="url(#hg)" stroke-opacity=".6" stroke-width="2" /><clipPath id="hc"><rect x="40" y="120" width="560" height="96" /></clipPath><clipPath id="hg2"><rect x="40" y="62" width="300" height="34"><animate attributeName="width" values="0;300" dur="1s" fill="freeze" /></rect></clipPath><g clip-path="url(#hg2)"><text x="40" y="88" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="24" font-weight="500" fill="#9fb0d0">Hi there, I’m</text></g><g clip-path="url(#hc)"><g><text x="40" y="184" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="60" font-weight="800" fill="#f4f6ff" letter-spacing="-1">Anshu Sharma</text><animateTransform attributeName="transform" type="translate" values="0 110;0 110;0 0" keyTimes="0;.4;1" dur="1.8s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;.2 .8 .2 1" /></g></g><g opacity="1"><text x="40" y="252" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="#247bff">Full-Stack Developer</text><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.25;1" calcMode="discrete" dur="12s" repeatCount="indefinite" /></g><g opacity="0"><text x="40" y="252" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="#247bff">Tech Lead</text><animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.25;0.5;1" calcMode="discrete" dur="12s" repeatCount="indefinite" /></g><g opacity="0"><text x="40" y="252" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="#247bff">AI Enthusiast</text><animate attributeName="opacity" values="0;0.5;1;0;0" keyTimes="0;0.25;0.5;0.75;1" calcMode="discrete" dur="12s" repeatCount="indefinite" /></g><g opacity="0"><text x="40" y="252" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="#247bff">Open Source Creator</text><animate attributeName="opacity" values="0;0;0;1;0" keyTimes="0;0.5;0.75;1;1" calcMode="discrete" dur="12s" repeatCount="indefinite" /></g><text x="40" y="288" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="17" font-weight="400" fill="#aab4cc">I build scalable full-stack web apps and intelligent AI agents.</text><circle cx="46" cy="330" r="4" fill="#ff354f" /><text x="58" y="335" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="500" fill="#7e8cab">Ramgarh / Computer Science & Engineering Student</text><circle cx="740" cy="130" r="45" fill="#1b2a4d" /><ellipse cx="740" cy="280" rx="90" ry="100" fill="#1b2a4d" /></svg>
 

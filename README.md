@@ -1,38 +1,599 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>Animated GitHub Profile Generator</title>
+        <style>
+            :root {
+                --bg: #eef1f5;
+                --panel: #fff;
+                --ink: #16202e;
+                --mute: #5b6778;
+                --line: #d5dbe4;
+                --acc: #247bff;
+                --accink: #fff;
+                --code: #0b1020;
+                --codeink: #d8e2f0;
+                box-sizing: border-box;
+                padding-top: env(safe-area-inset-top,0px);
+                padding-bottom: env(safe-area-inset-bottom,0px)
+            }
 
-# Animated GitHub profile generator
+            @media (prefers-color-scheme: dark) {
+                :root:not([data-theme="light"]) {
+                    --bg:#0a0e18;
+                    --panel: #111827;
+                    --ink: #e6ebf2;
+                    --mute: #97a3b5;
+                    --line: #243049;
+                    --code: #060914
+                }
+            }
 
-Based on the Profile Playbook: five animated SVGs plus a README, built from your details and your two character PNGs.
+            :root[data-theme="dark"] {
+                --bg: #0a0e18;
+                --panel: #111827;
+                --ink: #e6ebf2;
+                --mute: #97a3b5;
+                --line: #243049;
+                --code: #060914
+            }
 
-## Your character images
+            * {
+                box-sizing: border-box
+            }
 
-id.png (stylized portrait) right_pointing.png
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--ink);
+                font: 15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif
+            }
 
-Images stay in your browser. Large PNGs make large SVGs, so keep each under about 500 KB.
+            header {
+                max-width: 1320px;
+                margin: 0 auto;
+                padding: 26px 24px 6px
+            }
 
-## Details
+            h1 {
+                margin: 0 0 4px;
+                font-size: 28px;
+                font-weight: 800;
+                letter-spacing: -.02em
+            }
 
-Name
+            header p {
+                margin: 0;
+                color: var(--mute)
+            }
 
-GitHub username
+            main {
+                display: grid;
+                grid-template-columns: minmax(0,5fr) minmax(0,7fr);
+                gap: 20px;
+                max-width: 1320px;
+                margin: 0 auto;
+                padding: 14px 24px 40px
+            }
 
-Role and company
+            @media(max-width: 900px) {
+                main {
+                    grid-template-columns:1fr;
+                    padding: 10px 14px 30px
+                }
 
-City
+                header {
+                    padding: 20px 14px 4px
+                }
+            }
 
-One-sentence pitch Roles (up to 4, comma separated) Stack (comma separated) Hobbies (3, comma separated)
+            section {
+                background: var(--panel);
+                border: 1px solid var(--line);
+                border-radius: 10px;
+                padding: 14px 16px;
+                margin-bottom: 12px
+            }
 
-## Projects
+            h2 {
+                margin: 0 0 8px;
+                font-size: 15px
+            }
 
-One per line: name | description | URL
+            label {
+                display: block;
+                font-size: 13px;
+                color: var(--mute);
+                margin: 9px 0 3px
+            }
 
-## Socials and verified stats
+            input[type=text],textarea.in {
+                width: 100%;
+                padding: 8px 10px;
+                border: 1px solid var(--line);
+                border-radius: 6px;
+                background: var(--bg);
+                color: var(--ink);
+                font: inherit
+            }
 
-LinkedIn URL YouTube URL Instagram URL Topmate URL Verified stats
+            textarea.in {
+                min-height: 64px;
+                resize: vertical
+            }
 
-One per line: label: value (date). Leave empty to omit.
+            .row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px
+            }
 
-Save each file with the tab’s name: README.md in the repo root and the SVGs in an assets/ folder. Fonts are system fonts and icons are lettered badges, so no network requests are made. Swap in official brand icons if you want them.
+            input:focus-visible,textarea:focus-visible,button:focus-visible {
+                outline: 2px solid var(--acc);
+                outline-offset: 1px
+            }
+
+            .hint {
+                font-size: 12px;
+                color: var(--mute);
+                margin: 4px 0 0
+            }
+
+            .out {
+                position: sticky;
+                top: 10px;
+                align-self: start
+            }
+
+            .tabs {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                margin-bottom: 10px
+            }
+
+            .tab {
+                border: 1px solid var(--line);
+                background: var(--bg);
+                color: var(--ink);
+                border-radius: 6px;
+                padding: 5px 11px;
+                font: inherit;
+                font-size: 13px;
+                cursor: pointer
+            }
+
+            .tab[aria-pressed=true] {
+                background: var(--acc);
+                color: var(--accink);
+                border-color: var(--acc)
+            }
+
+            #prev {
+                background: #070b16;
+                border-radius: 10px;
+                overflow-x: auto;
+                margin-bottom: 10px
+            }
+
+            #prev svg {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                margin: auto
+            }
+
+            #code {
+                width: 100%;
+                height: 230px;
+                background: var(--code);
+                color: var(--codeink);
+                border: 0;
+                border-radius: 8px;
+                padding: 12px;
+                font: 12px/1.5 ui-monospace,Menlo,Consolas,monospace;
+                resize: vertical
+            }
+
+            .bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 8px 0
+            }
+
+            .btn {
+                background: var(--acc);
+                color: var(--accink);
+                border: 0;
+                border-radius: 6px;
+                padding: 8px 16px;
+                font: inherit;
+                font-weight: 600;
+                cursor: pointer
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Animated GitHub profile generator</h1>
+            <p>Based on the Profile Playbook: five animated SVGs plus a README, built from your details and your two character PNGs.</p>
+        </header>
+        <main>
+            <div id="form">
+                <section>
+                    <h2>Your character images</h2>
+                    <label for="f1">id.png (stylized portrait)</label>
+                    <input type="file" id="f1" accept="image/png">
+                    <label for="f2">right_pointing.png</label>
+                    <input type="file" id="f2" accept="image/png">
+                    <p class="hint">Images stay in your browser. Large PNGs make large SVGs, so keep each under about 500 KB.</p>
+                </section>
+                <section>
+                    <h2>Details</h2>
+                    <div class="row">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" value="Alex Rivera">
+                        </div>
+                        <div>
+                            <label for="user">GitHub username</label>
+                            <input type="text" id="user" value="alexrivera">
+                        </div>
+                        <div>
+                            <label for="role">Role and company</label>
+                            <input type="text" id="role" value="Software Engineer, Acme">
+                        </div>
+                        <div>
+                            <label for="city">City</label>
+                            <input type="text" id="city" value="Bengaluru">
+                        </div>
+                    </div>
+                    <label for="pitch">One-sentence pitch</label>
+                    <input type="text" id="pitch" value="I build fast, friendly software and share what I learn.">
+                    <label for="roles">Roles (up to 4, comma separated)</label>
+                    <input type="text" id="roles" value="Developer, Mentor, Creator, Learner">
+                    <label for="stack">Stack (comma separated)</label>
+                    <input type="text" id="stack" value="Python, React, Node.js, Docker, PostgreSQL, Git, AWS, TypeScript">
+                    <label for="hob">Hobbies (3, comma separated)</label>
+                    <input type="text" id="hob" value="Photography, Travel, Chess">
+                </section>
+                <section>
+                    <h2>Projects</h2>
+                    <textarea class="in" id="proj" aria-label="Projects">Project One | What it does in one line | https://github.com/alexrivera/project-one
+Project Two | What it does in one line | https://github.com/alexrivera/project-two</textarea>
+                    <p class="hint">One per line: name | description | URL</p>
+                </section>
+                <section>
+                    <h2>Socials and verified stats</h2>
+                    <label for="li">LinkedIn URL</label>
+                    <input type="text" id="li" placeholder="https://linkedin.com/in/…">
+                    <label for="yt">YouTube URL</label>
+                    <input type="text" id="yt" placeholder="https://youtube.com/@…">
+                    <label for="ig">Instagram URL</label>
+                    <input type="text" id="ig" placeholder="https://instagram.com/…">
+                    <label for="tm">Topmate URL</label>
+                    <input type="text" id="tm" placeholder="https://topmate.io/…">
+                    <label for="met">Verified stats</label>
+                    <textarea class="in" id="met" aria-label="Verified stats" placeholder="Public repos: 24 (24 Oct 2026)"></textarea>
+                    <p class="hint">One per line: label: value (date). Leave empty to omit.</p>
+                </section>
+            </div>
+            <div class="out">
+                <section>
+                    <div class="tabs" id="tabs" role="group" aria-label="Output files"></div>
+                    <div id="prev" aria-label="Animated preview"></div>
+                    <div class="bar">
+                        <h2 id="fname" style="margin:0"></h2>
+                        <button class="btn" id="copy">Copy file</button>
+                    </div>
+                    <textarea id="code" spellcheck="false" aria-label="File contents"></textarea>
+                    <p class="hint">Save each file with the tab’s name: README.md in the repo root and the SVGs in an assets/ folder. Fonts are system fonts and icons are lettered badges, so no network requests are made. Swap in official brand icons if you want them.</p>
+                </section>
+            </div>
+        </main>
+        <script>
+            (function() {
+                var $ = function(i) {
+                    return document.getElementById(i)
+                }
+                  , v = function(i) {
+                    return $(i).value.trim()
+                };
+                var imgs = {
+                    id: "",
+                    rp: ""
+                }
+                  , cur = "README.md"
+                  , F = {};
+                var esc = function(s) {
+                    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+                };
+                var list = function(s, n) {
+                    return s.split(",").map(function(x) {
+                        return x.trim()
+                    }).filter(Boolean).slice(0, n || 99)
+                };
+                var FONT = 'font-family="Segoe UI,Helvetica,Arial,sans-serif"';
+                function wrap(s, n) {
+                    var o = []
+                      , l = "";
+                    s.split(/\s+/).forEach(function(w) {
+                        if ((l + " " + w).trim().length > n && l) {
+                            o.push(l);
+                            l = w
+                        } else
+                            l = (l + " " + w).trim()
+                    });
+                    if (l)
+                        o.push(l);
+                    return o
+                }
+                function head(w, h, p, t) {
+                    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h + '" role="img" aria-label="' + esc(t) + '"><defs><pattern id="' + p + 'd" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1" fill="#18223d"/></pattern><linearGradient id="' + p + 'g" x1="0" x2="1"><stop offset="0" stop-color="#247bff"/><stop offset="1" stop-color="#ff354f"/></linearGradient></defs><rect width="' + w + '" height="' + h + '" rx="22" fill="#070b16"/><rect width="' + w + '" height="' + h + '" rx="22" fill="url(#' + p + 'd)"/><rect x="1" y="1" width="' + (w - 2) + '" height="' + (h - 2) + '" rx="21" fill="none" stroke="url(#' + p + 'g)" stroke-opacity=".6" stroke-width="2"/>'
+                }
+                function pic(src, x, y, w, h) {
+                    if (src)
+                        return '<image href="' + src + '" x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" preserveAspectRatio="xMidYMax meet"/>';
+                    var m = Math.min(w, h);
+                    return '<circle cx="' + (x + w / 2) + '" cy="' + (y + h * .36) + '" r="' + m * .17 + '" fill="#1b2a4d"/><ellipse cx="' + (x + w / 2) + '" cy="' + (y + h * .95) + '" rx="' + m * .34 + '" ry="' + m * .38 + '" fill="#1b2a4d"/>'
+                }
+                function cyc(i, n, d) {
+                    var kt, vv;
+                    if (i == 0) {
+                        kt = "0;" + 1 / n + ";1";
+                        vv = "1;0;0"
+                    } else {
+                        kt = "0;" + i / n + ";" + (i + 1) / n + ";1";
+                        vv = "0;1;0;0"
+                    }
+                    return '<animate attributeName="opacity" values="' + vv + '" keyTimes="' + kt + '" calcMode="discrete" dur="' + d + 's" repeatCount="indefinite"/>'
+                }
+                function T(x, y, s, sz, fill, wt, extra) {
+                    return '<text x="' + x + '" y="' + y + '" ' + FONT + ' font-size="' + sz + '" font-weight="' + (wt || 600) + '" fill="' + fill + '" ' + (extra || "") + '>' + esc(s) + '</text>'
+                }
+
+                function hero() {
+                    var n = v("name") || "Your Name"
+                      , roles = list(v("roles"), 4)
+                      , fs = Math.min(72, Math.floor(540 / (n.length * .6)));
+                    var s = head(900, 360, "h", "Intro banner");
+                    s += '<clipPath id="hc"><rect x="40" y="120" width="560" height="96"/></clipPath><clipPath id="hg"><rect x="40" y="62" width="300" height="34"><animate attributeName="width" values="0;300" dur="1s" fill="freeze"/></rect></clipPath>';
+                    s += '<g clip-path="url(#hg)">' + T(40, 88, "Hi there, I’m", 24, "#9fb0d0", 500) + '</g>';
+                    s += '<g clip-path="url(#hc)"><g>' + T(40, 120 + fs, n, fs, "#f4f6ff", 800, 'letter-spacing="-1"') + '<animateTransform attributeName="transform" type="translate" values="0 110;0 110;0 0" keyTimes="0;.4;1" dur="1.8s" fill="freeze" calcMode="spline" keySplines="0 0 1 1;.2 .8 .2 1"/></g></g>';
+                    roles.forEach(function(r, i) {
+                        s += '<g opacity="' + (i ? 0 : 1) + '">' + T(40, 252, r, 28, "#247bff", 700) + cyc(i, roles.length, roles.length * 3) + '</g>'
+                    });
+                    wrap(v("pitch"), 52).slice(0, 2).forEach(function(l, i) {
+                        s += T(40, 288 + i * 22, l, 17, "#aab4cc", 400)
+                    });
+                    s += '<circle cx="46" cy="330" r="4" fill="#ff354f"/>' + T(58, 335, [v("city"), v("role")].filter(Boolean).join("   /   "), 14, "#7e8cab", 500);
+                    s += pic(imgs.id, 610, 24, 260, 320) + '</svg>';
+                    return s
+                }
+
+                function about() {
+                    var roles = list(v("roles"), 4)
+                      , hob = list(v("hob"), 3);
+                    if (!hob.length)
+                        hob = ["Add hobbies"];
+                    var s = head(900, 300, "a", "About me");
+                    s += T(44, 66, "What I do", 30, "#f4f6ff", 800);
+                    roles.forEach(function(r, i) {
+                        var y = 112 + i * 42;
+                        s += '<rect x="44" y="' + (y - 22) + '" width="330" height="34" rx="10" fill="#0f1830" stroke="#243049"/><circle cx="64" cy="' + (y - 5) + '" r="5" fill="' + (i % 2 ? "#ff354f" : "#247bff") + '"/>' + T(80, y, r, 16, "#dfe6f5", 600)
+                    });
+                    s += '<rect x="440" y="36" width="420" height="228" rx="18" fill="#0f1830" stroke="url(#ag)" stroke-width="1.5"/>' + T(466, 76, "Off the keyboard", 16, "#7e8cab", 600);
+                    hob.forEach(function(h, i) {
+                        s += '<g opacity="' + (i ? 0 : 1) + '">' + T(466, 160, h, Math.min(44, Math.floor(380 / (h.length * .58))), "#f4f6ff", 800) + T(466, 196, "0" + (i + 1) + " of 0" + hob.length, 14, "#ff354f", 500) + cyc(i, hob.length, hob.length * 4) + '</g>'
+                    });
+                    var sw = (420 - 52 - (hob.length - 1) * 10) / hob.length;
+                    hob.forEach(function(h, i) {
+                        var x = 466 + i * (sw + 10)
+                          , kt = i == 0 ? "0;" + 1 / hob.length + ";1" : "0;" + i / hob.length + ";" + (i + 1) / hob.length + ";1"
+                          , vv = i == 0 ? sw + ";" + sw + ";" + sw : "0;0;" + sw + ";" + sw;
+                        if (i == 0)
+                            vv = sw + ";" + sw + ";" + sw;
+                        s += '<rect x="' + x + '" y="236" width="' + sw + '" height="5" rx="2.5" fill="#243049"/><rect x="' + x + '" y="236" width="' + sw + '" height="5" rx="2.5" fill="#247bff"><animate attributeName="width" values="' + (i == 0 ? "0;" + sw + ";" + sw : "0;0;" + sw + ";" + sw) + '" keyTimes="' + kt + '" dur="' + hob.length * 4 + 's" repeatCount="indefinite"/></rect>'
+                    });
+                    return s + '</svg>'
+                }
+
+                function stack() {
+                    var st = list(v("stack"), 12)
+                      , orb = [[150, 50, -16, 26, 1], [250, 88, 14, 34, 0], [370, 128, -6, 44, 1]]
+                      , g = [[], [], []]
+                      , cx = 450
+                      , cy = 190
+                      , s = head(900, 440, "s", "Tech stack");
+                    st.forEach(function(x, i) {
+                        g[i % 3].push(x)
+                    });
+                    orb.forEach(function(o, k) {
+                        s += '<g transform="translate(' + cx + ' ' + cy + ') rotate(' + o[2] + ')"><ellipse rx="' + o[0] + '" ry="' + o[1] + '" fill="none" stroke="#243049" stroke-dasharray="3 6"/>';
+                        g[k].forEach(function(t, i) {
+                            var a = 2 * Math.PI * i / g[k].length + k
+                              , p = function(b) {
+                                return (o[0] * Math.cos(b)).toFixed(1) + "," + (o[1] * Math.sin(b)).toFixed(1)
+                            }
+                              , w = t.length * 8 + 22
+                              , path = "M" + p(a) + " A" + o[0] + " " + o[1] + " 0 1 " + o[4] + " " + p(a + Math.PI) + " A" + o[0] + " " + o[1] + " 0 1 " + o[4] + " " + p(a) + "Z";
+                            s += '<g><g transform="rotate(' + -o[2] + ')"><rect x="' + -w / 2 + '" y="-14" width="' + w + '" height="28" rx="14" fill="#0f1830" stroke="' + (k == 1 ? "#ff354f" : "#247bff") + '"/>' + T(0, 5, t, 13, "#f4f6ff", 600, 'text-anchor="middle"') + '</g><animateMotion dur="' + o[3] + 's" repeatCount="indefinite" path="' + path + '"/></g>'
+                        });
+                        s += '</g>'
+                    });
+                    s += '<circle cx="450" cy="190" r="44" fill="#0f1830" stroke="url(#sg)" stroke-width="2"/>' + T(450, 196, "STACK", 16, "#f4f6ff", 800, 'text-anchor="middle" letter-spacing="2"');
+                    var x = 40
+                      , y = 372;
+                    st.forEach(function(t) {
+                        var w = t.length * 8 + 24;
+                        if (x + w > 860) {
+                            x = 40;
+                            y += 34
+                        }
+                        s += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="26" rx="13" fill="#0f1830" stroke="#243049"/>' + T(x + w / 2, y + 18, t, 13, "#aab4cc", 500, 'text-anchor="middle"');
+                        x += w + 8
+                    });
+                    return s + '</svg>'
+                }
+
+                function idcard() {
+                    var n = v("name") || "Your Name", u = v("user"), seq = [0, 7, -5, 3.5, -2.4], i, bars = "", x = 355, c = 0, m = v("met").split("\n").filter(function(l) {
+                        return l.indexOf(":") > 0
+                    }).slice(0, 4);
+                    for (i = 0; i < 16; i++)
+                        seq.push(i % 2 ? -1.7 : 1.7);
+                    seq.push(0);
+                    var vals = seq.map(function(a) {
+                        return a + " 450 60"
+                    }).join(";");
+                    for (i = 0; i < u.length * 3 + 30 && x < 545; i++) {
+                        c = (c * 31 + (u.charCodeAt(i % Math.max(u.length, 1)) || 65) + i) % 7;
+                        var bw = 1 + c % 3;
+                        bars += '<rect x="' + x + '" y="386" width="' + bw + '" height="30" fill="#dfe6f5"/>';
+                        x += bw + 2
+                    }
+                    var s = head(900, 500, "i", "ID card");
+                    s += '<clipPath id="ik"><rect x="325" y="96" width="250" height="360" rx="18"/></clipPath><linearGradient id="im" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e8edf7"/><stop offset=".5" stop-color="#8e9bb5"/><stop offset="1" stop-color="#d4dcec"/></linearGradient>';
+                    s += '<g><animateTransform attributeName="transform" type="translate" values="0 -460;0 0" dur=".9s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".3 .7 .3 1"/>';
+                    s += '<g><animateTransform attributeName="transform" type="rotate" values="' + vals + '" dur="' + seq.length * 1.1 + 's" repeatCount="indefinite"/>';
+                    s += '<rect x="438" y="0" width="24" height="70" fill="#ff354f"/><rect x="436" y="66" width="28" height="34" rx="7" fill="url(#im)"/><rect x="325" y="96" width="250" height="360" rx="18" fill="#0f1830" stroke="url(#ig)" stroke-width="2"/><rect x="425" y="108" width="50" height="9" rx="4.5" fill="#070b16"/>';
+                    s += pic(imgs.id, 340, 126, 220, 190) + T(450, 346, n, Math.min(24, Math.floor(210 / (n.length * .58))), "#f4f6ff", 800, 'text-anchor="middle"') + T(450, 368, v("role"), 13, "#8a98b8", 500, 'text-anchor="middle"') + bars;
+                    s += '<g clip-path="url(#ik)"><rect x="-80" y="96" width="50" height="360" fill="#fff" opacity=".13" transform="skewX(-18)"><animate attributeName="x" values="-80;700;700" keyTimes="0;.4;1" dur="6s" repeatCount="indefinite"/></rect></g></g></g>';
+                    m.forEach(function(l, k) {
+                        var p = l.indexOf(":");
+                        s += T(640, 150 + k * 72, l.slice(0, p).trim(), 14, "#7e8cab", 500) + T(640, 182 + k * 72, l.slice(p + 1).trim(), 26, k % 2 ? "#ff354f" : "#247bff", 800)
+                    });
+                    return s + '</svg>'
+                }
+
+                function connect() {
+                    var so = [["LinkedIn", "li", "#0A66C2"], ["YouTube", "yt", "#E02424"], ["Instagram", "ig", "#D62976"], ["Topmate", "tm", "#7C3AED"]].filter(function(a) {
+                        return v(a[1])
+                    })
+                      , s = head(900, 340, "c", "Connect")
+                      , h = 62
+                      , gap = 14
+                      , top = (340 - (so.length * h + (so.length - 1) * gap)) / 2;
+                    s += pic(imgs.rp, 30, 20, 300, 300);
+                    if (!so.length)
+                        s += T(380, 175, "Add your social URLs", 22, "#7e8cab", 600);
+                    so.forEach(function(a, k) {
+                        var y = top + k * (h + gap)
+                          , u = v(a[1]).replace(/^https?:\/\/(www\.)?/, "");
+                        s += '<rect x="370" y="' + y + '" width="500" height="' + h + '" rx="16" fill="#0f1830" stroke="#243049"/><circle cx="404" cy="' + (y + h / 2) + '" r="18" fill="' + a[2] + '"/>' + T(404, y + h / 2 + 6, a[0][0], 17, "#fff", 800, 'text-anchor="middle"') + T(436, y + 26, a[0], 17, "#f4f6ff", 700) + T(436, y + 46, u.slice(0, 48), 13, "#8a98b8", 400) + '<g transform="translate(822 ' + (y + h / 2) + ')"><path d="M0 0H18M11 -7L18 0L11 7" fill="none" stroke="#247bff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><animateTransform attributeName="transform" type="translate" additive="sum" values="0 0;6 0;0 0" dur="1.6s" begin="0s" repeatCount="indefinite"/></g>'
+                    });
+                    return s + '</svg>'
+                }
+
+                function readme() {
+                    var o = ['![Intro](./assets/hero.svg?v=1)', '![About](./assets/about-life.svg?v=1)', '![Stack](./assets/stack.svg?v=1)', '![ID](./assets/id-dashboard.svg?v=1)', '![Connect](./assets/connect.svg?v=1)']
+                      , o2 = [];
+                    var pr = v("proj").split("\n").map(function(l) {
+                        return l.split("|").map(function(x) {
+                            return x.trim()
+                        })
+                    }).filter(function(p) {
+                        return p[0]
+                    });
+                    var out = o.join("\n\n");
+                    if (pr.length)
+                        out += "\n\n## Projects\n\n| Project | Description |\n|---|---|\n" + pr.map(function(p) {
+                            return "| " + (p[2] ? "[" + p[0] + "](" + p[2] + ")" : p[0]) + " | " + (p[1] || "") + " |"
+                        }).join("\n");
+                    [["LinkedIn", "li"], ["YouTube", "yt"], ["Instagram", "ig"], ["Topmate", "tm"]].forEach(function(a) {
+                        if (v(a[1]))
+                            o2.push("[" + a[0] + "](" + v(a[1]) + ")")
+                    });
+                    if (o2.length)
+                        out += "\n\n## Connect\n\n" + o2.join(" · ");
+                    return out + "\n"
+                }
+
+                var names = ["README.md", "hero.svg", "about-life.svg", "stack.svg", "id-dashboard.svg", "connect.svg"];
+                names.forEach(function(n) {
+                    var b = document.createElement("button");
+                    b.type = "button";
+                    b.className = "tab";
+                    b.textContent = n;
+                    b.onclick = function() {
+                        cur = n;
+                        show()
+                    }
+                    ;
+                    b.id = "t" + n;
+                    $("tabs").appendChild(b)
+                });
+                function gen() {
+                    F = {
+                        "README.md": readme(),
+                        "hero.svg": hero(),
+                        "about-life.svg": about(),
+                        "stack.svg": stack(),
+                        "id-dashboard.svg": idcard(),
+                        "connect.svg": connect()
+                    };
+                    show()
+                }
+                function show() {
+                    names.forEach(function(n) {
+                        $("t" + n).setAttribute("aria-pressed", n == cur ? "true" : "false")
+                    });
+                    $("fname").textContent = (cur == "README.md" ? "" : "assets/") + cur;
+                    $("code").value = F[cur];
+                    $("prev").style.display = cur == "README.md" ? "none" : "block";
+                    $("prev").innerHTML = cur == "README.md" ? "" : F[cur]
+                }
+                function load(id, key) {
+                    $(id).onchange = function() {
+                        var f = this.files[0];
+                        if (!f)
+                            return;
+                        var r = new FileReader();
+                        r.onload = function() {
+                            imgs[key] = r.result;
+                            gen()
+                        }
+                        ;
+                        r.readAsDataURL(f)
+                    }
+                }
+                load("f1", "id");
+                load("f2", "rp");
+                $("form").addEventListener("input", gen);
+                $("copy").onclick = function() {
+                    var ta = $("code")
+                      , b = this;
+                    ta.select();
+                    var d = function() {
+                        b.textContent = "Copied";
+                        setTimeout(function() {
+                            b.textContent = "Copy file"
+                        }, 1500)
+                    };
+                    try {
+                        if (navigator.clipboard) {
+                            navigator.clipboard.writeText(ta.value).then(d, function() {
+                                document.execCommand("copy");
+                                d()
+                            });
+                            return
+                        }
+                    } catch (e) {}
+                    try {
+                        document.execCommand("copy");
+                        d()
+                    } catch (e) {}
+                }
+                ;
+                gen();
+            }
+            )();
+        </script>
+    </body>
+</html>
 
 <!--
 **AnshuBANKAI/AnshuBANKAI** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

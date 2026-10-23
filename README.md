@@ -1,25 +1,36 @@
 <div align="center">
 
-<img src="./assets/hero.svg?v=3" width="100%" alt="Intro Banner" />
+![Hero](./assets/hero.svg?v=1)
 
-<img src="./assets/about-life.svg?v=3" width="100%" alt="About Me" />
+![About](./assets/about-life.svg?v=1)
 
-<img src="./assets/stack.svg?v=3" width="100%" alt="Tech Stack" />
+![Stack](./assets/stack.svg?v=1)
 
-<img src="./assets/id-dashboard.svg?v=3" width="100%" alt="Profile ID" />
+![Metrics](./assets/id-dashboard.svg?v=1)
 
-<img src="./assets/connect.svg?v=3" width="100%" alt="Connect" />
+![Connect](./assets/connect.svg?v=1)
+
+### 🔗 Let's Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
+[![Twitter/X](https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-10b981?style=for-the-badge&logo=react&logoColor=white)](https://yourportfolio.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
 
 </div>
 
-## 🚀 Projects
+---
 
-| Project | Description | Link |
-| :--- | :--- | :--- |
-| **SevSetu** | Indigenous language chatbot built for local accessibility | [View Repo](https://github.com/anshusharma/sevsetu) |
-| **TruthGuard** | Real-time deepfake detection platform using advanced ML | [View Repo](https://github.com/anshusharma/truthguard) |
+### 📌 Featured Repositories
 
-## 🌐 Connect With Me
-* [LinkedIn](https://linkedin.com/in/anshu-sharma)
-* [YouTube](https://youtube.com/@anshu-sharma)
-* [Topmate](https://topmate.io/anshu_sharma)
+| Repository | Description | Tech Stack | Stars |
+| :--- | :--- | :--- | :--- |
+| [⚡ **agent-flow**](https://github.com) | Multi-agent AI orchestration pipeline for LLM apps. | `TypeScript` `Python` `Next.js` | ⭐ 450 |
+| [🛡️ **vault-db**](https://github.com) | High-throughput distributed key-value storage engine. | `Rust` `Docker` `gRPC` | ⭐ 320 |
+| [🎨 **cyber-ui**](https://github.com) | Minimalist component library tailored for dark-mode web apps. | `React` `Tailwind` `Storybook` | ⭐ 180 |
+
+<br/>
+
+<div align="center">
+  <sub>Designed with Cyber-Noir aesthetic for GitHub Profile</sub>
+</div>

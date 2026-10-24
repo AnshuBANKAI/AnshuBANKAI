@@ -1,70 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" role="img" aria-labelledby="hr-title hr-desc">
-  <title id="hr-title">YOUR NAME - profile banner</title>
-  <desc id="hr-desc">Animated burgundy banner with name, role line, orbital geometry and a glowing underline.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" width="100%" height="100%">
   <defs>
-    <linearGradient id="hr-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#10070C"/>
-      <stop offset="0.55" stop-color="#190B12"/>
-      <stop offset="1" stop-color="#451126"/>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10070C" />
+      <stop offset="50%" stop-color="#190B12" />
+      <stop offset="100%" stop-color="#451126" />
     </linearGradient>
-    <radialGradient id="hr-glow" cx="0.8" cy="0.2" r="0.6">
-      <stop offset="0" stop-color="#701A3D" stop-opacity="0.75"/>
-      <stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="hr-line" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#701A3D" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#E5B5C7"/>
-      <stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
+
+    <!-- Animated Glow Gradient -->
+    <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#701A3D" stop-opacity="0.2">
+        <animate attributeName="offset" values="-1; 1" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#C77B9B" stop-opacity="0.8">
+        <animate attributeName="offset" values="0; 2" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#701A3D" stop-opacity="0.2">
+        <animate attributeName="offset" values="1; 3" dur="6s" repeatCount="indefinite" />
+      </stop>
     </linearGradient>
-    <pattern id="hr-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#C77B9B" stroke-opacity="0.10" stroke-width="1"/>
+
+    <!-- Tech Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#451126" stroke-width="0.5" stroke-opacity="0.3" />
     </pattern>
-    <filter id="hr-blur" x="-20%" y="-300%" width="140%" height="700%">
-      <feGaussianBlur stdDeviation="6"/>
-    </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="400" fill="url(#hr-bg)"/>
-  <rect width="1200" height="400" fill="url(#hr-grid)"/>
-  <rect width="1200" height="400" fill="url(#hr-glow)">
-    <animate attributeName="opacity" values="0.6;1;0.6" dur="8s" repeatCount="indefinite"/>
-  </rect>
+  <!-- Background Layer -->
+  <rect width="1000" height="320" fill="url(#bg-grad)" rx="12" />
+  <rect width="1000" height="320" fill="url(#grid)" rx="12" />
 
-  <!-- Orbital geometry -->
-  <g transform="translate(960 200)" fill="none" stroke="#C77B9B" stroke-opacity="0.35">
-    <circle r="70"/>
-    <circle r="120" stroke-dasharray="3 9"/>
-    <circle r="170" stroke-opacity="0.18"/>
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
-      <circle cx="120" cy="0" r="5" fill="#E5B5C7" stroke="none"/>
-    </g>
-    <g>
-      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="38s" repeatCount="indefinite"/>
-      <circle cx="170" cy="0" r="4" fill="#C77B9B" stroke="none"/>
-    </g>
-  </g>
+  <!-- Animated Orbital Ring -->
+  <circle cx="850" cy="160" r="90" fill="none" stroke="#701A3D" stroke-width="1.5" stroke-dasharray="8 6" stroke-opacity="0.6">
+    <animateTransform attributeName="transform" type="rotate" from="0 850 160" to="360 850 160" dur="20s" repeatCount="indefinite" />
+  </circle>
 
-  <!-- Drawn path -->
-  <path d="M0 330 C 200 250, 360 380, 560 300 S 900 260, 1200 320"
-        fill="none" stroke="#C77B9B" stroke-width="2" stroke-linecap="round"
-        stroke-dasharray="1400" stroke-dashoffset="1400" opacity="0.8">
-    <animate attributeName="stroke-dashoffset" values="1400;0;0;1400" keyTimes="0;0.45;0.8;1" dur="10s" repeatCount="indefinite"/>
-  </path>
+  <!-- Title & Role -->
+  <text x="60" y="130" fill="#F8F0F3" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="1">
+    Sri Sushmita Dasari
+  </text>
+  
+  <text x="60" y="175" fill="#E5B5C7" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="400" letter-spacing="2">
+    AI/ML ENGINEER  |  FULL-STACK DEVELOPER  |  CREATIVE TECHNOLOGIST
+  </text>
 
-  <!-- Text -->
-  <text x="80" y="170" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700" fill="#F8F0F3">YOUR NAME</text>
-  <text x="82" y="215" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" letter-spacing="3" fill="#E5B5C7">YOUR ROLE  |  YOUR SPECIALTY  |  YOUR FOCUS</text>
-
-  <!-- Glowing underline -->
-  <g>
-    <rect x="82" y="238" width="420" height="4" rx="2" fill="url(#hr-line)" filter="url(#hr-blur)" opacity="0.9"/>
-    <rect x="82" y="238" width="420" height="3" rx="1.5" fill="url(#hr-line)">
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
-    </rect>
-  </g>
-
-  <text x="82" y="285" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" fill="#C77B9B" fill-opacity="0.9">Building thoughtful software, one commit at a time.</text>
+  <!-- Glowing Underline Accent -->
+  <path d="M 60 205 L 550 205" stroke="url(#glow-grad)" stroke-width="3" stroke-linecap="round" />
 </svg>
 

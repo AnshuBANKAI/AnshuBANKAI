@@ -4,18 +4,18 @@
 </p>
 
 ## 💫 About Me
-Generative AI and full-stack engineer who builds NLP and MERN products end-to-end—from Hugging Face transformer pipelines and Text-to-Speech voice output to JWT-secured REST APIs and responsive React interfaces. Passionate about creating intelligent, accessible digital solutions.
+A B.Tech CSE Student,2026 with hands-on experience in MERN stack. Built SevSetu, a multilingual voice chatbot that delivers government notifications in Bhojpuri, Hindi and English with the integration RAG,Built a full-stack AI interview-prep platform that analyzes a resume and job description to generate match scores, interview questions, skill gaps and a day-wise prep plan, plus tailored resume PDFs, along with a JWT-authentication & tool.
 
 - 🎓 **Education**: B.Tech in Computer Science & Engineering at Ramgarh Engineering College (2022–2026 | CGPA: 7.43)
 - 📍 **Location**: Ranchi, Jharkhand, India
-- 💡 **Focus Areas**: Generative AI, NLP, Full-Stack MERN Development, Machine Learning
+- 💡 **Focus Areas**: Generative AI, Full-Stack MERN Development.
 
 ---
 
 ## 🏆 Leadership & Campus Involvement
-- 🚀 **Tech Lead**: Google Developer Groups (GDG) on Campus, Ramgarh Engineering College
-- 🏛️ **Leadership Lead**: REC IPR Students Club
-- 🎯 **Initiatives**: Organized and led "Hackmanthon" (the first 24-hour hackathon at REC) and drove Google Cloud Study Jam reaching 100+ student participants.
+- 🚀 **Tech Lead**: Google Developer Groups (GDG) on Campus, Ramgarh Engineering College ( 2025 - 2026 )
+- 🏛️ **Vice-President**: REC IPR Students Club ( 2024 - 2026 )
+- 🎯 **Initiatives**: Organized and led "Hackmanthon" Hackathon (the first 24-hour hackathon at REC) and drove Google Cloud Study Jam reaching 100+ student participants.
 
 ---
 
@@ -23,9 +23,9 @@ Generative AI and full-stack engineer who builds NLP and MERN products end-to-en
 
 | Category | Technologies |
 | :--- | :--- |
-| **AI / ML / NLP** | Generative AI, NLP, NLU, LLMs, RAG, HuggingFace Transformers, Text-to-Speech (TTS), Scikit-learn, Random Forest, Pandas, NumPy |
-| **Full Stack / MERN** | React.js, Node.js, Express.js, MongoDB, JavaScript (ES6+), REST API Design, JWT Authentication, HTML5, CSS3, Responsive Web Design |
-| **Languages & Tools** | Python, JavaScript, C, Git, GitHub, Streamlit, FastAPI, Power BI, Postman, MySQL, Agile / Iterative Development |
+| **AI| Generative AI, Data Analysis, RAG, HuggingFace , Lang Chain, Ollama, Fast Api |
+| **Full Stack / MERN** | React.js, Node.js, Express.js, MongoDB, JavaScript, REST API, JWT,Redis, Docker, Pipeline, Kubbernet |
+| **Languages & Tools** | Python, JavaScript, TypeScript, Git, GitHub, Postman , Gpt, Firebase, Froward Deployment |
 
 ---
 
@@ -36,10 +36,10 @@ Generative AI and full-stack engineer who builds NLP and MERN products end-to-en
 - Engineered a multilingual Generative AI chatbot that translates and streams government notifications across Bhojpuri, Hindi, and English.
 - Built Natural Language Understanding (NLU) and Text-to-Speech (TTS) pipelines delivering regional-language voice output to extend service access for non-English speakers.
 
-### 📚 Book Store Management System
-> *MongoDB, Express.js, React.js, Node.js, REST API, JWT* | [Repository](https://github.com/AnshuBANKAI/Book-Management-)
-- Developed a full-stack MERN application with JWT-based user authentication and complete CRUD functionality for book inventory management.
-- Designed a RESTful API backend integrated with a React.js front end for reliable client-server data flow.
+### 📚 Recruit_AI - AI Interview Prep Platform (“behavioral interviews Gen AI”)
+> *React 19, Vite, SCSS, Node.js, Express 5, MongoDB (Mongoose), JWT auth, Google Gemini API, Zod, Multer, pdf-parse* | [Repository](https://github.com/AnshuBANKAI/Recruit_AI)
+- Job seekers don’t know how well their resume fits a role, what questions to expect, or how to prepare. Generic interview advice doesn’t use their own profile or the specific job description..
+- An AI interview prep platform. The user uploads a resume and pastes a job description, and Gemini generates a match score, technical and behavioral questions with model answers, skill gaps, and a day-wise prep plan. It can also produce a tailored, ATS-friendly resume PDF. Users log in with JWT auth and can reopen their saved reports..
 
 ### 🏥 Hospital Bill Predictor System
 > *Python, Pandas, Scikit-learn, Random Forest, Streamlit* | [Repository](https://github.com/AnshuBANKAI/Hospital-bills-)
@@ -60,9 +60,10 @@ Generative AI and full-stack engineer who builds NLP and MERN products end-to-en
 ---
 
 ## 📜 Certifications
-- **Full Stack Development** – GeeksforGeeks[cite: 7]
-- **Data Analysis Using Python** – IBM[cite: 7]
-- **Postman API Fundamentals** – Student Expert[cite: 7]
+- **Full Stack Development** – GeeksforGeeks
+- **Data Analysis Using Python** – IBM
+- **Postman API Fundamentals** – Student Expert
+- **Google Cloud** – Google Cloud Jam
 
 ---
 

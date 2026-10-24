@@ -36,12 +36,10 @@ Currently studying / working on **YOUR CURRENT FOCUS**.
 
 ## Contribution activity
 
-<!-- Real data from your GitHub account -->
 <img src="https://ghchart.rshah.org/701A3D/YOUR-USERNAME" alt="YOUR-USERNAME's GitHub contribution chart" width="100%"/>
 
 ## GitHub stats
 
-<!-- Third-party service; if it breaks or rate-limits, delete this section. -->
 <p>
   <img height="170" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=YOUR-USERNAME&show_icons=true&hide_border=true&bg_color=190B12&title_color=E5B5C7&text_color=F8F0F3&icon_color=C77B9B"/>
   <img height="170" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR-USERNAME&layout=compact&hide_border=true&bg_color=190B12&title_color=E5B5C7&text_color=F8F0F3"/>
@@ -52,7 +50,5 @@ Currently studying / working on **YOUR CURRENT FOCUS**.
 [LinkedIn](https://www.linkedin.com/in/YOUR-LINKEDIN) ·
 [Portfolio](https://YOUR-USERNAME.github.io) ·
 [Email](mailto:YOUR-EMAIL)
-
-<!-- Tip: don't publish your phone number. -->
 
 <img src="assets/footer.svg" alt="" width="100%"/>
